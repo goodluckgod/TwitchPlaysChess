@@ -2,4 +2,4 @@
 Twitch Play Chess
 
 
-Orginal Node.js app [here](https://github.com/kevinAlbs/Chess)
+Orginal Node.js app is [here](https://github.com/kevinAlbs/Chess)
