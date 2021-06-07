@@ -18,7 +18,7 @@ const client = new tmi.Client({
     secure: true,
     reconnect: true
   },
-  channels: [ 'chname' ]
+  channels: [ 'goodluckgod' ]
 });
 
 var newVote = function() {
@@ -158,6 +158,8 @@ client.on('message', (channel, tags, message, self) => {
 		}
 	}  
 
+//   console.log(selectedPieceIndex.y)
+//   CHESSAPP.GamePlay.cellClicked()
 });
 
 function getPiece(x, y) {
@@ -167,7 +169,7 @@ function getPiece(x, y) {
     console.log("after", x, y);
 	var retval = undefined
 	CHESSAPP.GamePlay.pieces.forEach(function(item, index) {
-       if (item !== null && item.x == x && item.y == y && item.justMoved == false) {
+       if (item !== null && item.x == x && item.y == y && CHESSAPP.GamePlay.getTurn() == item.color) {
 		   retval = item
 		   return
 	   }
