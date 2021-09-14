@@ -54,7 +54,7 @@ var voteEnded = function() {
   		CHESSAPP.GamePlay.movePieceTo(moveOptions);
 	} else {
 		
-        var val = 1
+        	var val = 1
 
 		switch (item.index) {
 			case 1:
@@ -88,7 +88,7 @@ client.on('message', (channel, tags, message, self) => {
 		var pieces = message.split("/")
   		var currentPiece = pieces[0].split("")
 
-        if (pieces[1] == undefined || pieces[0].length !== 2 || pieces[1].length !== 2) {
+        	if (pieces[1] == undefined || pieces[0].length !== 2 || pieces[1].length !== 2) {
 			return
 		}
 
@@ -113,8 +113,7 @@ client.on('message', (channel, tags, message, self) => {
   					special: opt.special
   				}
 
-				if (votes[index] == undefined) {
-			
+				if (votes[index] == undefined) {			
 					votes[index] = {count: 1, moveOptions: moveOptions, message: message}
 				} else {
 					votes[index].count += 1
@@ -127,13 +126,11 @@ client.on('message', (channel, tags, message, self) => {
   		}
 	} else {
 
-        console.log(message);
-
 		if (message !== "knight" && message !== "bishop" && message !== "rook" && message !== "queen") {
 			return;
 		}
 
-        var index = 1
+        	var index = 1
 
 		switch (message) {
 			case "bishop":
@@ -144,8 +141,6 @@ client.on('message', (channel, tags, message, self) => {
 				index = 4
 		} 
 
-
-		
 
 		val = message
 		if(val){
@@ -164,12 +159,12 @@ client.on('message', (channel, tags, message, self) => {
 
 function getPiece(x, y) {
 	console.log("before", x, y);
-    var x = xDiv[x]
+    	var x = xDiv[x]
 	var y = Math.abs(y - 8)
-    console.log("after", x, y);
+    	console.log("after", x, y);
 	var retval = undefined
 	CHESSAPP.GamePlay.pieces.forEach(function(item, index) {
-       if (item !== null && item.x == x && item.y == y && CHESSAPP.GamePlay.getTurn() == item.color) {
+       	if (item !== null && item.x == x && item.y == y && CHESSAPP.GamePlay.getTurn() == item.color) {
 		   retval = item
 		   return
 	   }
